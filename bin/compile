@@ -201,7 +201,7 @@ export PATH=/app/.heroku/php/bin:$PATH
 
 if [[ "${PHP_VERSION}" ]]; then
     PHP_DIST_URL="$S3_URL/php-$PHP_VERSION.tar.gz"
-    echo "- PHP $PHP_VERSION" | indent
+    echo "- PHP $PHP_VERSION - $PHP_DIST_URL" | indent
     curl --silent --location "$PHP_DIST_URL" | tar xz -C $BUILD_DIR/.heroku/php
     PHP_EXT_DIR=$(php-config --extension-dir)
     # update config files
